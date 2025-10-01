@@ -63,6 +63,22 @@ bun run build
 bun run typecheck
 ```
 
+## Quick Start
+
+Run the example test client to see the facilitator in action:
+
+1. Start the server in one terminal:
+```bash
+bun run dev
+```
+
+2. Run the test client in another terminal:
+```bash
+bun run examples/test-client.ts
+```
+
+The test client demonstrates creating channels, making payments, and accessing protected content with X-402 headers. See [examples/README.md](examples/README.md) for more details.
+
 ## API Endpoints
 
 ### Health Check
@@ -172,6 +188,32 @@ The x402 protocol enables micropayments through off-chain payment channels. Key 
 - **Balance Checks**: Ensures sufficient channel balance
 - **Expiration Checks**: Prevents use of expired channels
 
+## Deployment
+
+### Docker
+
+Build and run with Docker:
+
+```bash
+docker build -t x402-facilitator .
+docker run -p 3000:3000 x402-facilitator
+```
+
+Or use Docker Compose:
+
+```bash
+docker-compose up -d
+```
+
+### Production Considerations
+
+- Use a persistent database instead of in-memory storage
+- Set up HTTPS with a reverse proxy (nginx, Caddy)
+- Implement rate limiting and authentication
+- Monitor channel expiration and cleanup
+- Set up logging and metrics collection
+- Use environment variables for configuration
+
 ## Development
 
 This facilitator is designed to be extensible. Key areas for customization:
@@ -180,6 +222,10 @@ This facilitator is designed to be extensible. Key areas for customization:
 - **Blockchain Integration**: Add smart contract interactions for channel creation/settlement
 - **Additional Middleware**: Add authentication, rate limiting, or custom business logic
 - **Payment Processing**: Extend payment verification with custom rules
+
+## Contributing
+
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## References
 
