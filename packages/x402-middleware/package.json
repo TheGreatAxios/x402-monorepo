@@ -1,0 +1,27 @@
+{
+	"name": "@enfusion-ai/x402-middleware",
+	"version": "0.1.0",
+	"description": "Extensible x402 payment middleware for Hono/Express-style frameworks",
+	"type": "module",
+	"main": "dist/index.cjs",
+	"module": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"sideEffects": false,
+	"scripts": {
+		"build": "tsup src/index.ts --dts --format esm,cjs --clean",
+		"dev": "tsup src/index.ts --dts --format esm,cjs --watch"
+	},
+	"peerDependencies": {
+		"hono": "^4.9.0"
+	},
+	"devDependencies": {
+		"tsup": "^8.1.0",
+		"typescript": "^5.6.3"
+	},
+	"dependencies": {
+		"zod": "^4.1.11"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}

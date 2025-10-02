@@ -65,6 +65,9 @@ web_modules/
 # Yarn Integrity file
 .yarn-integrity
 
+# Bun lockfile
+bun.lock
+
 # dotenv environment variable files
 .env
 .env.*
@@ -81,6 +84,9 @@ out
 # Nuxt.js build / generate output
 .nuxt
 dist
+.DS_Store
+apps/**/dist/
+packages/**/dist/
 
 # Gatsby files
 .cache/
