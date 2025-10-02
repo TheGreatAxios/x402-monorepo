@@ -1,4 +1,5 @@
 import type { Context, Next } from 'hono';
+import { logger } from '../logger';
 
 export async function loggerMiddleware(c: Context, next: Next) {
   const start = Date.now();
@@ -10,5 +11,5 @@ export async function loggerMiddleware(c: Context, next: Next) {
   const duration = Date.now() - start;
   const status = c.res.status;
   
-  console.log(`[${new Date().toISOString()}] ${method} ${path} - ${status} (${duration}ms)`);
+  logger.info('request', { method, path, status, duration });
 }

@@ -1,0 +1,26 @@
+{
+  "name": "@enfusion-ai/facilitator-app",
+  "version": "0.1.0",
+  "description": "x402 Facilitator service (Hono + Bun)",
+  "type": "module",
+  "private": true,
+  "module": "index.ts",
+  "scripts": {
+    "dev": "bun run --watch index.ts",
+    "start": "bun run index.ts",
+    "build": "bun build index.ts --outdir ./dist --target bun",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "viem": "^2.21.4",
+    "hono": "^4.9.9",
+    "ravendb": "^6.0.0-alpha.61",
+    "zod": "^4.1.11",
+    "envalid": "^8.0.0",
+    "winston": "^3.13.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.6.3"
+  }
+}
