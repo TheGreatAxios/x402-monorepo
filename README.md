@@ -10,6 +10,7 @@ This repo hosts four codebases:
 ## Facilitator service
 
 Endpoints:
+
 - GET /api/options — advertise accepted payment options (networks, limits)
 - POST /verify — verify a payment payload (stubbed)
 - POST /settle — settle a payment (stubbed)
@@ -23,6 +24,7 @@ bun --cwd apps/facilitator run dev
 ## Middleware package
 
 Behavior:
+
 - Protects configured routes
 - Expects an X-402 JSON header
 - Calls facilitator /verify
